@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PH Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style3.css">
+    <link rel="shortcut icon" type="x-icon" href="assests/music.svg">
+</head>
+
+<body>
+    <header class="hero">
+        <nav>
+            <h3 class="logo">PH <span style="color: tomato;">Studio</span></h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ph studio.html">PH Studio</a></li>
+                <li><a href="ph cloud.html"  class="active">PH Cloud</a></li>
+                <li><a href="sign_up_in.html">Sign in</a></li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+            <button type="button">Download</button>
+        </nav>
+    </header>
+    <main>
+        <div class="left">
+            <div class="song-item">
+                <img src="assests/sl1.jpeg" alt="" class="song-item-img">
+                <div class="song-detail">
+                    <h3 class="song-nam">Mere Samne wali khidki mein</h3>
+                    <h4 class="song-artist">Kishore Kumar</h4>
+                </div>
+            </div>
+            <div class="song-item">
+                <img src="assests/sl2.jpg" alt="" class="song-item-img">
+                <div class="song-detail">
+                    <h3 class="song-nam">Random Music 1</h3>
+                    <h4 class="song-artist">A girl</h4>
+                </div>
+            </div>             
+            <div class="song-item">
+                <img src="assests/sl3.jpg" alt="" class="song-item-img">
+                <div class="song-detail">
+                    <h3 class="song-nam">InterStellar</h3>
+                    <h4 class="song-artist">Its_PLK</h4>
+                </div>
+            </div>             
+            <div class="song-item">
+                <img src="assests/sl4.jpg" alt="" class="song-item-img">
+                <div class="song-detail">
+                    <h3 class="song-nam">Amar Dehokhan</h3>
+                    <h4 class="song-artist">Odd Signature</h4>
+                </div>
+            </div>             
+            <div class="song-item">
+                <img src="assests/sl5.jpeg" alt="" class="song-item-img">
+                <div class="song-detail">
+                    <h3 class="song-nam">Dukkho Bilash</h3>
+                    <h4 class="song-artist">Artcell</h4>
+                </div>
+            </div>           
+            <div class="song-item">
+                <img src="assests/sl6.jpg" alt="" class="song-item-img">
+                <div class="song-detail">
+                    <h3 class="song-nam">Taray Taray</h3>
+                    <h4 class="song-artist">JAMES</h4>
+                </div>
+            </div>           
+        </div>
+        <div class="right">
+            <div class="details">
+                <h3 id="song-name">Mere Samne wali khidki mai</h3>
+                <h5 id="song-singer">Kishore Kumar</h5>
+            </div>
+            <div class="song-image">
+                <img src="assests/giphy.webp" alt="" id="musicanim">
+            </div>
+            <div class="controller">
+                <img src="assests/prev.svg" alt="" id="prevSong" onclick="prevSong()">
+                <img src="assests/pause.svg" id="playpauseImg" onclick="playPause()">
+                <img src="assests/next.svg" alt="" id="nextSong" onclick="nextSong()">
+            </div>
+            <input type="range" id="song-duration" onchange="duration()">
+            <div class="volume-div">
+                <div class="volume-img"><img src="assests/volume.svg" id="vol-svg"></div>
+                <input type="range" id="volume-range" onchange="volume()">
+            </div>
+        </div>
+    </main>
+    <script src="script3.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans',sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    /* background-color: rgb(150, 37, 230); */
+    background: url('assests/bghelp.jpg'),no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.hero{
+    color: white;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 30px;
+}
+.logo{
+    color: #ededed;
+    font-size: 1.5em;
+}
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 30px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.5s;
+}
+nav ul li a:hover{
+    border: 1px solid tomato;
+    background: tomato;
+    border-radius: 20px;
+    padding: 6px 10px;
+    
+}
+.active{
+    border: 1px solid tomato;
+    background: tomato;
+    border-radius: 20px;
+    padding: 6px 10px;
+}
+.hero button{
+    border: 2px solid tomato;
+    background: tomato;
+    padding: 12px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.hero button:hover{
+    background: transparent;
+    color: tomato;
+    border: 2px solid tomato;
+}
+main{
+    width: 80vw;
+    height: 85%;
+    margin: auto;
+    border: 1px solid #ededed;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(3px);
+}
+.left{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    gap: 10px;
+    font-size: 18px;
+}
+.right{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+#txtara{
+    width: 80%;
+    height: 80%;
+    padding: 20px 20px;
+    font-size: 1.2rem;
+    color: black;
+    resize: none;
+    border: 2px solid #ededed;
+    border-radius: 20px;
+    background-color: #ededed;
+    outline: none;
+    overflow: auto;
+}
+#txtara::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+#btn{
+    border: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid white ;
+    background-color: transparent;
+    font-weight: bold;
+    color: white;
+    font-size: 1em;
+    transition: 0.4s;
+    cursor: pointer;
+}
+#btn:hover{
+    background-color: #fff;
+    color: black;
+    border: none;
+    font-size: 1.1em;
+    font-weight: 500;
+}
