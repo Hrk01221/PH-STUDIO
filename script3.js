@@ -47,6 +47,18 @@ let songs = [
         image: "assests/sl6.jpg",
         singer: "JAMES"
     },
+    {
+        name: "He is a pirate",
+        path: "musics/7.mp3",
+        image: "assests/sl7.png",
+        singer: "Its_PLK"
+    },
+    {
+        name: "CelesTial Reverie",
+        path: "musics/8.flac",
+        image: "assests/sl8.jpg",
+        singer: "Its_PLK"
+    },
 ]
 function loadTrack(index){
     if(prev_ind==-1){
