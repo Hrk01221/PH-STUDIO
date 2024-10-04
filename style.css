@@ -1,23 +1,29 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Josefin Sans',sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
 }
-body{
+
+body {
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)) , url('assests/vecteezy_pair-of-headphones-on-table_46001702.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assests/vecteezy_pair-of-headphones-on-table_46001702.jpeg');
     background-position: center;
     background-size: cover;
     background-color: #111;
 }
 
-.hero{
+.hero {
     color: white;
     margin-bottom: 200px;
 }
-nav{
+
+.topnav {
+    display: none;
+}
+
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,35 +31,41 @@ nav{
     padding-left: 10%;
     padding-right: 10%;
 }
-.logo{
+
+.logo {
     color: #ededed;
     font-size: 1.5em;
 }
-nav ul li{
+
+nav ul li {
     list-style-type: none;
     display: inline-block;
     padding: 10px 30px;
 }
-nav ul li a{
+
+nav ul li a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
     transition: 0.5s;
 }
-nav ul li a:hover{
+
+nav ul li a:hover {
     border: 1px solid tomato;
     background: tomato;
     border-radius: 20px;
     padding: 6px 10px;
-    
+
 }
-.active{
+
+.active {
     border: 1px solid tomato;
     background: tomato;
     border-radius: 20px;
     padding: 6px 10px;
 }
-.hero button{
+
+.hero button {
     border: 2px solid tomato;
     background: tomato;
     padding: 12px 30px;
@@ -62,12 +74,14 @@ nav ul li a:hover{
     font-weight: bold;
     transition: 0.5s;
 }
-.hero button:hover{
+
+.hero button:hover {
     background: transparent;
     color: tomato;
     border: 2px solid tomato;
 }
-.hometop{
+
+.hometop {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,51 +91,64 @@ nav ul li a:hover{
     font-size: 50px;
     color: transparent;
 }
-.hometop h1{
+
+.hometop h1 {
     animation: dichik 1.5s ease-in-out infinite;
     -webkit-text-stroke: 2px white;
 }
-.hometop h1:hover{
+
+.hometop h1:hover {
     color: transparent;
     -webkit-text-stroke: 2px tomato;
 }
-.hometop a{
+
+.hometop a {
     margin-top: 20px;
 }
-.hometop a{
-   position: relative;
-   background: #fff;
-   color: #fff;
-   text-decoration: none;
-   text-transform: uppercase;
-   font-size: 20px;
-   letter-spacing: 0.1em;
-   font-weight: 300;
-   padding: 20px 40px;
-   transition: 0.5s;
+
+.bbtn {
+    display: none;
 }
-.hometop a:hover{
+
+.hometop a {
+    position: relative;
+    background: #fff;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    font-weight: 300;
+    padding: 20px 40px;
+    transition: 0.5s;
+}
+
+.hometop a:hover {
     background: #66FCF1;
     color: #66FCF1;
     letter-spacing: 0.25rem;
     box-shadow: 0 0 35px #66FCF1;
 }
-.hometop a:before{
+
+.hometop a:before {
     content: '';
     position: absolute;
     inset: 2px;
     background: #1F2833;
 }
-.hometop a span{
+
+.hometop a span {
     position: relative;
     z-index: 1;
 }
-.hometop a i{
+
+.hometop a i {
     position: absolute;
     inset: 0;
     display: block;
 }
-.hometop a i::before{
+
+.hometop a i::before {
     content: '';
     position: absolute;
     top: 0;
@@ -132,11 +159,13 @@ nav ul li a:hover{
     transform: translateX(-50%) skewX(325deg);
     transition: 0.5s;
 }
-.hometop a:hover i::before{
+
+.hometop a:hover i::before {
     width: 20px;
     left: 20%;
 }
-.hometop a i::after{
+
+.hometop a i::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -147,23 +176,130 @@ nav ul li a:hover{
     transform: translateX(-50%) skewX(325deg);
     transition: 0.5s;
 }
-.hometop a:hover i::after{
+
+.hometop a:hover i::after {
     width: 20px;
     left: 80%;
 }
 
 
 @keyframes dichik {
-    0%{
+    0% {
         color: transparent;
         -webkit-text-stroke: 2px white;
     }
-    50%{
+
+    50% {
         color: transparent;
         -webkit-text-stroke: 2px tomato;
     }
-    80%{
+
+    80% {
         color: transparent;
         -webkit-text-stroke: 2px #245C8F;
+    }
+}
+
+@media screen and (max-width: 1083px) {
+    .hero button {
+        display: none;
+    }
+
+    .hometop {
+        margin-top: 200px;
+    }
+    .bbtn {
+        display: block;
+        border: 2px solid tomato;
+        background: tomato;
+        padding: 12px 30px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.5s;
+        margin-top: 30px;
+    }
+
+    .bbtn:hover {
+        background: transparent;
+        color: tomato;
+        border: 2px solid tomato;
+    }
+}
+
+@media screen and (max-width: 932px) {
+    nav {
+        display: none;
+    }
+
+    .topnav {
+        overflow: hidden;
+        position: relative;
+        padding-top: 20px;
+        padding-left: 10%;
+        padding-right: 10%;
+        display: flex;
+        justify-content: space-between;
+    }
+    #myLinks {
+        background-color: white;
+        height: 60vh;
+        width: 100%;
+        max-width: 300px;
+        position: fixed;
+        top: 0;
+        right: -500px;
+        display: flex;
+        flex-direction: column;
+        font-size: 1.5rem;
+        transition: .3s ease;
+        padding: 30px 30px;
+        background: rgba(255, 255, 255, 0.45);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    #myLinks.active {
+        right: -100px;
+    }
+
+    #myLinks ul li {
+        list-style: none;
+        margin-bottom: 20px;
+    }
+
+    #myLinks ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        transition: 0.7s;
+    }
+    #myLinks ul li a:hover {
+        text-decoration: underline;
+    }
+    .cross{
+        margin-bottom: 20px;
+        position: absolute;
+        right: 110px;
+        top: 20px;
+        cursor: pointer;
+    }
+    .icon {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+    .hometop a{
+        z-index: 0;
+    }
+    #myLinks{
+        z-index: 1;
+    }
+}
+@media screen and (max-width: 565px){
+    .hometop h1{
+        font-size: 60px;
     }
 }

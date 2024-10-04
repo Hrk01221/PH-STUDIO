@@ -25,12 +25,40 @@
             </ul>
             <button type="button">Download</button>
         </nav>
+        <div class="topnav">
+            <h3 class="logo">PH <span style="color: tomato;">Studio</span></h3>
+            <div id="myLinks">
+                <a class="cross"><img src="assests/cross.svg" alt=""></a>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="ph studio.html">PH Studio</a></li>
+                    <li><a href="ph cloud.html">PH Cloud</a></li>
+                    <li><a href="sign_up_in.html">Sign in</a></li>
+                    <li><a href="help.html">Help</a></li>
+                </ul>
+            </div>
+            <a href="javascript:void(0);" class="icon">
+                <img src="assests/menu.svg" alt="">
+            </a>
+        </div>
     </header>
     <div class="hometop">
         <h1>PH STUDIO</h1>
         <a href="ph studio.html"><span>Explore</span><i></i></a>
+        <button class="bbtn">Download</button>
     </div>
     </div>
+    <script>
+        let btn = document.querySelector('.icon');
+        let btn1 = document.querySelector('.cross');
+        let myLinks = document.querySelector('#myLinks');
+        btn.addEventListener('click', () => {
+            myLinks.classList.toggle('active');
+        });
+        btn1.addEventListener('click', () => {
+            myLinks.classList.toggle('active');
+        })
+    </script>
 </body>
 
 </html>
