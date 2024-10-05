@@ -28,6 +28,23 @@
             </ul>
             <button type="button">Download</button>
         </nav>
+        <div class="topnav">
+            <h3 class="logo">PH <span style="color: tomato;">Studio</span></h3>
+            <div id="myLinks">
+                <a class="cross"><img src="assests/cross.svg" alt=""></a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="ph studio.html">PH Studio</a></li>
+                    <li><a href="ph cloud.html">PH Cloud</a></li>
+                    <li><a href="sign_up_in.html"><span id="topactive">Sign in</span></a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="">Download</a></li>
+                </ul>
+            </div>
+            <a href="javascript:void(0);" class="icon">
+                <img src="assests/menu.svg" alt="">
+            </a>
+        </div>
     </header>
     <div class="background"></div>
     <div class="container">
@@ -43,7 +60,6 @@
                     <a href=""><i class='bx bxl-twitter'></i></a>
                 </div>
             </div>
-
         </div>
         <div class="logreg-box">
             <div class="form-box login">
@@ -113,6 +129,17 @@
             </div>
         </div>
     </div>
+    <script>
+        let btn = document.querySelector('.icon');
+        let btn1 = document.querySelector('.cross');
+        let myLinks = document.querySelector('#myLinks');
+        btn.addEventListener('click', () => {
+            myLinks.classList.toggle('active');
+        });
+        btn1.addEventListener('click', () => {
+            myLinks.classList.toggle('active');
+        })
+    </script>
     <script src="script1.js"></script>
 </body>
 
