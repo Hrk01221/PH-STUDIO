@@ -10,6 +10,24 @@ let muteOrnotMute = document.querySelector("#vol-svg");
 let songDuration = document.querySelector("#song-duration");
 let songItem = document.querySelectorAll(".song-item");
 let prev_ind = -1;
+let btn = document.querySelector('.icon');
+let btn1 = document.querySelector('.cross');
+let myLinks = document.querySelector('#myLinks');
+let rdLeft = document.querySelector('.rdleft');
+let btn2 = document.querySelector('.more');
+let btn3 = document.querySelector('.cross1');
+btn.addEventListener('click', () => {
+    myLinks.classList.toggle('active');
+});
+btn1.addEventListener('click', () => {
+    myLinks.classList.toggle('active');
+})
+btn2.addEventListener('click', () => {
+    rdLeft.classList.toggle('active');
+})
+btn3.addEventListener('click', () => {
+    rdLeft.classList.toggle('active');
+})
 let songs = [
     {
         name: "Samne Wali khidki me",
@@ -60,34 +78,34 @@ let songs = [
         singer: "Its_PLK"
     },
 ]
-function loadTrack(index){
-    if(prev_ind==-1){
-        songItem[index].style.background =  "rgba(255, 255, 255, 0.8)";
+function loadTrack(index) {
+    if (prev_ind == -1) {
+        songItem[index].style.background = "rgba(255, 255, 255, 0.8)";
         prev_ind = index;
     }
     else {
-        songItem[prev_ind].style.background =  "rgba(255, 255, 255, 0.4)";
-        songItem[index].style.background =  "rgba(255, 255, 255, 0.8)";
+        songItem[prev_ind].style.background = "rgba(255, 255, 255, 0.4)";
+        songItem[index].style.background = "rgba(255, 255, 255, 0.8)";
         prev_ind = index;
     }
     songDuration.value = 0;
-    track.src=songs[index].path;
+    track.src = songs[index].path;
     songName.innerHTML = songs[index].name;
     songSinger.innerHTML = songs[index].singer;
     songImage.style = `background-image: url("${songs[index].image}");`
     volume();
     duration();
-    setInterval(()=>{
+    setInterval(() => {
         songDuration.max = track.duration
         songDuration.value = track.currentTime
-    },1000);
-    track.loop=true;
+    }, 1000);
+    track.loop = true;
     track.load();
 }
 
 loadTrack(index);
-function playPause(){
-    if(playingSong == false){
+function playPause() {
+    if (playingSong == false) {
         playSong()
         musicanim.style.display = "block"
     }
@@ -96,52 +114,56 @@ function playPause(){
         musicanim.style.display = "none"
     }
 }
-function playSong(){
+function playSong() {
     track.play();
-    playingSong=true;
+    playingSong = true;
     playPauseImage.src = "assests/play.svg"
 }
-function pauseSong(){
+function pauseSong() {
     track.pause();
-    playingSong=false;
+    playingSong = false;
     playPauseImage.src = "assests/pause.svg"
 }
-function prevSong(){
-    if(index==0)index = songs.length-1;
-    else index=index-1;
-    loadTrack(index);
-    playingSong=false;
-    playPause();
-}
-function nextSong(){
-    if(index==songs.length-1)index = 0;
-    else index = index+1;
+function prevSong() {
+    if (index == 0) index = songs.length - 1;
+    else index = index - 1;
     loadTrack(index);
     playingSong = false;
     playPause();
 }
-function volume(){
-    track.volume = volumeAdjust.value/100;
-    if(volumeAdjust.value==0){
+function nextSong() {
+    if (index == songs.length - 1) index = 0;
+    else index = index + 1;
+    loadTrack(index);
+    playingSong = false;
+    playPause();
+}
+function volume() {
+    track.volume = volumeAdjust.value / 100;
+    if (volumeAdjust.value == 0) {
         muteOrnotMute.src = "assests/mute.svg";
     }
     else muteOrnotMute.src = "assests/volume.svg";
 }
-function duration(){
+function duration() {
     track.currentTime = songDuration.value;
 }
-songItem.forEach((song,index)=>{
-    song.addEventListener('click',()=>{
+songItem.forEach((song, index) => {
+    song.addEventListener('click', () => {
+        if(index >= 8){
+            rdLeft.classList.toggle('active');
+        }
+        index = index % 8
         playingSong = false;
         loadTrack(index);
         playPause();
-        if(prev_ind==-1){
-            songItem[index].style.background =  "rgba(255, 255, 255, 0.8)";
+        if (prev_ind == -1) {
+            songItem[index].style.background = "rgba(255, 255, 255, 0.8)";
             prev_ind = index;
         }
         else {
-            songItem[prev_ind].style.background =  "rgba(255, 255, 255, 0.4)";
-            songItem[index].style.background =  "rgba(255, 255, 255, 0.8)";
+            songItem[prev_ind].style.background = "rgba(255, 255, 255, 0.4)";
+            songItem[index].style.background = "rgba(255, 255, 255, 0.8)";
             prev_ind = index;
         }
     })
